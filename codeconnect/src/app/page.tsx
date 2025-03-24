@@ -10,7 +10,9 @@ import {SignInButton,
 export default function Home() {
   return (
     <div className="m-10">
-      home page
+      <SignInButton>
+        <Button>Sign in</Button>
+      </SignInButton>
     </div>
   );
 }

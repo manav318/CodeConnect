@@ -2,6 +2,7 @@ import { type Metadata } from 'next'
 import {
   ClerkProvider
 } from '@clerk/nextjs'
+import {ConvexClerkProvider} from '../components/providers/ConvexClerkProvider'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    <ConvexClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <header className="flex justify-end items-center p-4 gap-4 h-16">
@@ -34,6 +35,6 @@ export default function RootLayout({
           {children}
         </body>
       </html>
-    </ClerkProvider>
+    </ConvexClerkProvider>
   )
 }
