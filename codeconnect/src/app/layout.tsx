@@ -1,6 +1,9 @@
 import { type Metadata } from 'next'
 import {
-  ClerkProvider
+  ClerkProvider,
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut
 } from '@clerk/nextjs'
 import {ConvexClerkProvider} from '../components/providers/ConvexClerkProvider'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -35,10 +38,17 @@ export default function RootLayout({
           <header className="flex justify-end items-center p-4 gap-4 h-16">
           </header>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <div className='min-h-screen'>
-          <Navbar/>
-          <main className='px-4 sm:px-6 lg:px-8'>{children}</main>
-          </div>
+
+          <SignedIn>
+            <div className='min-h-screen'>
+            <Navbar/>
+            <main className='px-4 sm:px-6 lg:px-8'>{children}</main>
+            </div>
+          </SignedIn>
+
+          <SignedOut>
+            <RedirectToSignIn></RedirectToSignIn>
+          </SignedOut>
           </ThemeProvider>
         </body>
       </html>
