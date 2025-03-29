@@ -15,6 +15,9 @@ function MeetingModal({isOpen,onClose,title,isJoinMeeting}:MeetingModalProps) {
 
     const [meetingUrl, setMeetingUrl] = useState("")
 
+    const createMeeting=()=>{}
+    const joinMeeting=()=>{}
+
     const handleStart=()=>{}
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
