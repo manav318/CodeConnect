@@ -4,7 +4,7 @@ import { api } from "../../convex/_generated/api"
 
 
 
-const useUserRole=()=>{
+export const useUserRole=()=>{
     const {user}=useUser()
 
     const userData=useQuery(api.users.getUserByClerkId, {clerkId: user?.id|| ""})
@@ -19,4 +19,4 @@ const useUserRole=()=>{
     
 }
 
-export default useUserRole
+
